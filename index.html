@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Палітра кольорів</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; }
+    .palette { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .color { width: 120px; height: 90px; border: 1px solid #999; border-radius: 4px;
+             display: flex; align-items: flex-end; padding: 4px; box-sizing: border-box;
+             font-size: 12px; }
+    .color span { background: rgba(255,255,255,0.8); padding: 2px 4px; }
+    label { display: block; margin-top: 10px; }
+    input, select { padding: 5px; width: 250px; }
+    .error { color: red; font-size: 13px; }
+    button { margin-top: 15px; padding: 6px 16px; }
+  </style>
+</head>
+<body>
+  <h1>Палітра кольорів</h1>
+  <div class="palette" id="palette"></div>
+
+  <h2>Додати колір</h2>
+  <form id="form" novalidate>
+    <label>Назва
+      <input type="text" id="name">
+    </label>
+    <div class="error" id="nameError"></div>
+
+    <label>Тип
+      <select id="type">
+        <option>RGB</option>
+        <option>RGBA</option>
+        <option>HEX</option>
+      </select>
+    </label>
+
+    <label>Код кольору
+      <input type="text" id="code" placeholder="255, 0, 0">
+    </label>
+    <div class="error" id="codeError"></div>
+
+    <button type="submit">Save</button>
+  </form>
+
+  <script src="main.js"></script>
+</body>
+</html>
